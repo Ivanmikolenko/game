@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class player : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public float jumpForce = 5f;
     public float speed = 5f;
     public float rotationSpeed = 200f;
+    public Vector2 curPos;
     private Rigidbody2D rb;
     private bool isRotating;
     private bool isGrounded;
@@ -62,6 +63,8 @@ public class player : MonoBehaviour
 
     void Update()
     {
+        curPos = transform.position;
+
         Vector2 movement = new Vector2(speed, rb.linearVelocity.y);
         rb.linearVelocity = movement;
         if (isRotating)
