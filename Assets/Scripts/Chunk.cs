@@ -17,7 +17,7 @@ public class Chunk : MonoBehaviour
     private float pointRadius = 0.2f;
     private float debugDisplayTime = 1f;
     private int minPointCount = 30;
-    private int maxPointCount = 50;
+    private int maxPointCount = 150;
 
     void Awake()
     {
