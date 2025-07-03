@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.U2D;
+using System.Linq;
 public class ChunkSpawner : MonoBehaviour
 {
     public GameObject chunk;
@@ -88,12 +89,23 @@ public class ChunkSpawner : MonoBehaviour
             SpawnChunk();
         }
     }
-    public void ClearAllChunks()
+    public void ClearMap()
     {
         if (firstChunk != null) Destroy(firstChunk);
         if (middleChunk != null) Destroy(middleChunk);
         if (lastChunk != null) Destroy(lastChunk);
 
         firstChunk = middleChunk = lastChunk = null;
+
+        GameObject[] rocks = GameObject.FindGameObjectsWithTag("Rock");
+        for (int i = 0; i < rocks.Length; i++)
+        {
+            Destroy(rocks[i]);
+        }
+        GameObject[] abysses = GameObject.FindGameObjectsWithTag("Abyss");
+        for (int i = 0; i < abysses.Length; i++)
+        {
+            Destroy(abysses[i]);
+        }
     }
 }
