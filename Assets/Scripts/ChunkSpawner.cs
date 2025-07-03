@@ -1,9 +1,10 @@
 using UnityEngine;
-
+using System.Collections.Generic;
+using UnityEngine.U2D;
 public class ChunkSpawner : MonoBehaviour
 {
     public GameObject chunk;
-    public GameObject rock;
+    public List<GameObject> rocks;
     public GameObject abyss;
     private GameObject lastChunk, middleChunk, firstChunk;
     public GameObject playerObject;
@@ -43,13 +44,25 @@ public class ChunkSpawner : MonoBehaviour
                 pos.x += Random.Range(3f, 5f);
                 lastChunk.transform.position = pos;
                 lastChunkScript.UpdatePoints();
+
+                GameObject newAbyss = Instantiate(abyss, pos, transform.rotation);
+                Abyss newAbyssScript = newAbyss.GetComponent<Abyss>();
+                Vector2[] points = new Vector2[]
+                {
+                    middleChunkScript.GetRightBotPoint(),
+                    middleChunkScript.GetRightTopPoint(),
+                    new Vector2(lastChunkScript.GetLeftTopPoint().x, lastChunkScript.GetLeftTopPoint().y),
+                    lastChunkScript.GetLeftBotPoint()
+                };
+
+                newAbyssScript.UpdateCollider(points);
             }
             else
             {
                 lastChunk.transform.position = pos;
                 lastChunkScript.UpdatePoints();
                 pos.y = lastChunkScript.GetLeftTopPoint().y + 1;
-                GameObject newrock = Instantiate(rock, pos, transform.rotation);
+                GameObject newrock = Instantiate(rocks[Random.Range(0, rocks.Count - 1)], pos, transform.rotation);
             }
 
         }

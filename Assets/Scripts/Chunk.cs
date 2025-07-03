@@ -90,7 +90,7 @@ public class Chunk : MonoBehaviour
         DrawDebugPoint(rightTopPoint);
         DrawDebugPoint(rightBotPoint);
     }
-    public Vector2 GetLeftbotPoint()
+    public Vector2 GetLeftBotPoint()
     {
         return this.leftBotPoint;
     }

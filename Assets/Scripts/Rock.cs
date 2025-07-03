@@ -1,9 +1,10 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.U2D;
 
 public class RandomTextureApplier : MonoBehaviour
 {
-    public List<Sprite> rocks;
+    public Sprite rock;
 
     private SpriteRenderer spriteRenderer;
 
@@ -11,12 +12,6 @@ public class RandomTextureApplier : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        ApplyRandomTexture();
-    }
-
-    public void ApplyRandomTexture()
-    {
-        int randomIndex = Random.Range(0, rocks.Count);
-        spriteRenderer.sprite = rocks[randomIndex];
+        spriteRenderer.sprite = rock;
     }
 }

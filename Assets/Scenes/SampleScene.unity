@@ -149,7 +149,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chunk: {fileID: 6001288990696834565, guid: 20996a95af7557346990fedaaac6a970, type: 3}
-  rock: {fileID: 4375409576425064609, guid: 5eca31663fd6b85488af9223abe91493, type: 3}
+  rocks:
+  - {fileID: 2840419252127082077, guid: 84714f6a2d47b03479e9ec72557d64b0, type: 3}
+  - {fileID: 2837006684104459354, guid: dee112d45eb13d04b92145172532a208, type: 3}
+  - {fileID: 4132586026638533067, guid: 6f47a1e2912525f47ba6a04c1c703369, type: 3}
+  - {fileID: 8777118297204439878, guid: 1d53713c604428144938958ae5633a8d, type: 3}
+  - {fileID: 7526180390528983742, guid: bc5b0aa3c6c19f044bba6b00f3cd405a, type: 3}
+  - {fileID: 6250911981902033762, guid: a559cb892dc04154892b94b1ddbd3b53, type: 3}
   abyss: {fileID: 6081920104620927628, guid: 9a656cf3ea562024b92a786bde99d1eb, type: 3}
   playerObject: {fileID: 1696132287}
 --- !u!4 &132865588
