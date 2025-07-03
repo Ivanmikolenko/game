@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class ChunkSpawner : MonoBehaviour
 {
-    public GameObject objectToSpawn;
+    public GameObject chunk;
+    public GameObject rock;
+    public GameObject abyss;
     private GameObject lastChunk, middleChunk, firstChunk;
     public GameObject playerObject;
     Player playerScript;
@@ -14,10 +16,8 @@ public class ChunkSpawner : MonoBehaviour
         if (lastChunk != null)
         {
             pos = lastChunkScript.GetRightBotPoint();
-            
-            //pos.x += 5f;
         }
-        GameObject newChunk = Instantiate(objectToSpawn, pos, transform.rotation);
+        GameObject newChunk = Instantiate(chunk, pos, transform.rotation);
         Chunk newChunkScript = newChunk.GetComponent<Chunk>();
 
         if (firstChunk != null)
@@ -37,11 +37,21 @@ public class ChunkSpawner : MonoBehaviour
         if (middleChunk != null)
         {
             pos.y = pos.y - (lastChunkScript.GetLeftTopPoint().y - middleChunkScript.GetRightTopPoint().y);
-            if (Random.Range(1f, 10f) > 7)
+            int randomK = Random.Range(1, 10);
+            if (randomK >= 7)
             {
                 pos.x += Random.Range(3f, 5f);
+                lastChunk.transform.position = pos;
+                lastChunkScript.UpdatePoints();
             }
-            lastChunk.transform.position = pos;
+            else
+            {
+                lastChunk.transform.position = pos;
+                lastChunkScript.UpdatePoints();
+                pos.y = lastChunkScript.GetLeftTopPoint().y + 1;
+                GameObject newrock = Instantiate(rock, pos, transform.rotation);
+            }
+
         }
         if (firstChunk != null) firstChunkScript.UpdatePoints();
         if (middleChunk != null) middleChunkScript.UpdatePoints();
