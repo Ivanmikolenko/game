@@ -8,6 +8,7 @@ TagManager:
   - MenuCamera
   - Rock
   - Abyss
+  - Coin
   layers:
   - Default
   - TransparentFX

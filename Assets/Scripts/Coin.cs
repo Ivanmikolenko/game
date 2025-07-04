@@ -5,12 +5,22 @@ public class Coin : MonoBehaviour
 {
     public List<Sprite> coinConditions;
     private SpriteRenderer spriteRenderer;
+    private Collider2D collision;
     void Awake()
     {
+        collision = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = coinConditions[0];
     }
 
+    private void Update()
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            CollectCoin();
+            Destroy(gameObject);
+        }
+    }
     public void CollectCoin()
     {
         StartCoroutine(AnimateCoin());
