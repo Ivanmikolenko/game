@@ -65,6 +65,7 @@ public class ChunkSpawner : MonoBehaviour
                 pos.y = lastChunkScript.GetLeftTopPoint().y + 1;
                 GameObject newrock = Instantiate(rocks[Random.Range(0, rocks.Count - 1)], pos, transform.rotation);
             }
+            lastChunkScript.AddCoins();
 
         }
         if (firstChunk != null) firstChunkScript.UpdatePoints();
@@ -106,6 +107,11 @@ public class ChunkSpawner : MonoBehaviour
         for (int i = 0; i < abysses.Length; i++)
         {
             Destroy(abysses[i]);
+        }
+        GameObject[] coins = GameObject.FindGameObjectsWithTag("Coin");
+        for (int i = 0; i < coins.Length; i++)
+        {
+            Destroy(coins[i]);
         }
     }
 }

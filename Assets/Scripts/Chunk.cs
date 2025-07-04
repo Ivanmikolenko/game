@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.U2D;
+using static UnityEditor.PlayerSettings;
 
 public class Chunk : MonoBehaviour
 {
+    public GameObject coin;
     public SpriteShapeController shapeController;
     private int pointCount = 50;
     private float maxHeight = 5f;
@@ -89,6 +91,23 @@ public class Chunk : MonoBehaviour
         DrawDebugPoint(leftTopPoint);
         DrawDebugPoint(rightTopPoint);
         DrawDebugPoint(rightBotPoint);
+    }
+    public void AddCoins()
+    {
+        Spline spline = shapeController.spline;
+        int randomPos = Random.Range(10, 20);
+        int numOfCoins = Random.Range(3, 5);
+        for (int i = 0; i < numOfCoins; i++)
+        {
+            GameObject newCoin = Instantiate(
+                coin,
+                new Vector2(
+                    transform.TransformPoint(spline.GetPosition(i + randomPos)).x,
+                    transform.TransformPoint(spline.GetPosition(i + randomPos)).y + 1.7f
+                ),
+                transform.rotation
+            );
+        }
     }
     public Vector2 GetLeftBotPoint()
     {

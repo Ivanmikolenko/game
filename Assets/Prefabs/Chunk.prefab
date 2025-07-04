@@ -184,17 +184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb8c35d289bc03419e89be79f7ef5b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coin: {fileID: 40499611206311318, guid: 0774e2bfa5a218c4ab6b5284df41d224, type: 3}
   shapeController: {fileID: 8750045211803752820}
-  pointCount: 100
-  maxHeight: 5
-  minHeight: 1
-  smoothness: 3
-  noiseScale: 0.05
-  decreasePriority: 0.7
-  drawPointsInRuntime: 1
-  pointColor: {r: 0, g: 1, b: 0, a: 1}
-  pointRadius: 0.2
-  debugDisplayTime: 1
 --- !u!60 &6012280059782048764
 PolygonCollider2D:
   m_ObjectHideFlags: 0
