@@ -49,7 +49,7 @@ public class Chunk : MonoBehaviour
         float width = (pointCount - 1) * smoothness;
         float baseHeight = 0f;
 
-        spline.InsertPointAt(0, new Vector3(0, baseHeight, 0));
+        spline.InsertPointAt(0, new Vector3(0, -7, 0));
         //DrawDebugPoint(spline.GetPosition(0), 0);
 
         for (int i = 0; i < pointCount; i++)
@@ -69,7 +69,7 @@ public class Chunk : MonoBehaviour
             //DrawDebugPoint(spline.GetPosition(i + 1), i + 1);
         }
 
-        spline.InsertPointAt(pointCount + 1, new Vector3(width, baseHeight, 0));
+        spline.InsertPointAt(pointCount + 1, new Vector3(width, -7, 0));
         //DrawDebugPoint(spline.GetPosition(pointCount + 1), pointCount + 1);
         //leftBotPoint = transform.TransformPoint(spline.GetPosition(0));
         //leftTopPoint = transform.TransformPoint(spline.GetPosition(1));

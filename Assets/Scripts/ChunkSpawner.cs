@@ -51,8 +51,8 @@ public class ChunkSpawner : MonoBehaviour
                 Vector2[] points = new Vector2[]
                 {
                     middleChunkScript.GetRightBotPoint(),
-                    middleChunkScript.GetRightTopPoint(),
-                    new Vector2(lastChunkScript.GetLeftTopPoint().x, lastChunkScript.GetLeftTopPoint().y),
+                    new Vector2(middleChunkScript.GetRightTopPoint().x, middleChunkScript.GetRightTopPoint().y - 2),
+                    new Vector2(lastChunkScript.GetLeftTopPoint().x, lastChunkScript.GetLeftTopPoint().y - 2),
                     lastChunkScript.GetLeftBotPoint()
                 };
 
