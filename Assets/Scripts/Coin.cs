@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Collections;
 public class Coin : MonoBehaviour
 {
+    private GameObject varManager;
     public List<Sprite> coinConditions;
+    private VarManager varManagerScript;
     private SpriteRenderer spriteRenderer;
     private Collider2D collision;
     void Awake()
     {
+        varManager = GameObject.FindGameObjectsWithTag("VarManager")[0];
+        varManagerScript = varManager.GetComponent<VarManager>();
         collision = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = coinConditions[0];
@@ -23,6 +27,7 @@ public class Coin : MonoBehaviour
     }
     public void CollectCoin()
     {
+        varManagerScript.coinsCur++;
         StartCoroutine(AnimateCoin());
     }
 

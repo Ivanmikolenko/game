@@ -9,6 +9,7 @@ TagManager:
   - Rock
   - Abyss
   - Coin
+  - VarManager
   layers:
   - Default
   - TransparentFX
