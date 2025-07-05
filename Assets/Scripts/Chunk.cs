@@ -119,7 +119,7 @@ public class Chunk : MonoBehaviour
     }
     public Vector2 GetRightBotPoint()
     {
-        Debug.Log(this.rightBotPoint);
+        //Debug.Log(this.rightBotPoint);
         return this.rightBotPoint;
     }
     public Vector2 GetLeftTopPoint()

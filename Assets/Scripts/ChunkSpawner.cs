@@ -73,10 +73,13 @@ public class ChunkSpawner : MonoBehaviour
         if (lastChunk != null) lastChunkScript.UpdatePoints();
     }
 
-    void Start()
+    void Awake()
     {
         playerScript = playerObject.GetComponent<Player>();
+    }
 
+    void OnEnable()
+    {
         SpawnChunk();
         SpawnChunk();
         SpawnChunk();
@@ -84,6 +87,7 @@ public class ChunkSpawner : MonoBehaviour
 
     void Update()
     {
+        //Debug.Log(playerPosition.x + " " + lastChunkScript.GetLeftTopPoint().x);
         playerPosition = playerScript.curPos;
         if (playerPosition.x > lastChunkScript.GetLeftTopPoint().x)
         {
