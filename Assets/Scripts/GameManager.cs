@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     {
         cameraSwitcher.SwitchToMenuCamera();
         chunkSpawner.GetComponent<ChunkSpawner>().ClearMap();
+        fuelControl.GetComponent<FuelControl>().curFuelAmount = fuelControl.GetComponent<FuelControl>().maxFuelAmount;
         player.transform.position = new Vector2(2f, 3f);
 
         player.SetActive(false);

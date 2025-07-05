@@ -62,7 +62,7 @@ public class ChunkSpawner : MonoBehaviour
             {
                 lastChunk.transform.position = pos;
                 lastChunkScript.UpdatePoints();
-                pos.y = lastChunkScript.GetLeftTopPoint().y + 1;
+                pos.y = lastChunkScript.GetLeftTopPoint().y + 0.5f;
                 GameObject newrock = Instantiate(rocks[Random.Range(0, rocks.Count - 1)], pos, transform.rotation);
             }
             lastChunkScript.AddCoins();
@@ -72,17 +72,22 @@ public class ChunkSpawner : MonoBehaviour
         if (middleChunk != null) middleChunkScript.UpdatePoints();
         if (lastChunk != null) lastChunkScript.UpdatePoints();
     }
-
-    void Awake()
+    public void InitChunks()
+    {
+        SpawnChunk();
+        SpawnChunk();
+        SpawnChunk();
+    }
+    void Start()
     {
         playerScript = playerObject.GetComponent<Player>();
+        //InitChunks();
+        
     }
 
     void OnEnable()
     {
-        SpawnChunk();
-        SpawnChunk();
-        SpawnChunk();
+        //InitChunks();
     }
 
     void Update()

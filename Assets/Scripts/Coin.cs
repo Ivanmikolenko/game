@@ -28,6 +28,7 @@ public class Coin : MonoBehaviour
     public void CollectCoin()
     {
         varManagerScript.coinsCur++;
+        varManagerScript.UpdateCoinsCurText();
         StartCoroutine(AnimateCoin());
     }
 

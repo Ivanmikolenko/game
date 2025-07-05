@@ -97,16 +97,34 @@ public class Chunk : MonoBehaviour
         Spline spline = shapeController.spline;
         int randomPos = Random.Range(10, 20);
         int numOfCoins = Random.Range(3, 5);
+
         for (int i = 0; i < numOfCoins; i++)
         {
             GameObject newCoin = Instantiate(
                 coin,
                 new Vector2(
                     transform.TransformPoint(spline.GetPosition(i + randomPos)).x,
-                    transform.TransformPoint(spline.GetPosition(i + randomPos)).y + 1.7f
+                    transform.TransformPoint(spline.GetPosition(i + randomPos)).y + 1.2f
                 ),
                 transform.rotation
             );
+
+            SetupCoinCollider(newCoin);
+        }
+    }
+
+    private void SetupCoinCollider(GameObject coinObject)
+    {
+        SpriteRenderer spriteRenderer = coinObject.GetComponent<SpriteRenderer>();
+        CircleCollider2D collider = coinObject.GetComponent<CircleCollider2D>();
+
+        if (spriteRenderer != null && collider != null)
+        {
+            Bounds bounds = spriteRenderer.bounds;
+            float radius = Mathf.Max(bounds.extents.x, bounds.extents.y);
+
+            collider.radius = radius / coinObject.transform.localScale.x;
+            collider.offset = Vector2.zero;
         }
     }
     public Vector2 GetLeftBotPoint()

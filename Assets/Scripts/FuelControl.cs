@@ -10,7 +10,13 @@ public class FuelControl : MonoBehaviour
 
     public float curFuelAmount;
 
-    public void Enable()
+    void Awake()
+    {
+        curFuelAmount = maxFuelAmount;
+        UpdateUI();
+    }
+
+    void Enable()
     {
         curFuelAmount = maxFuelAmount;
         UpdateUI();
