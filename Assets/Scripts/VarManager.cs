@@ -56,7 +56,7 @@ public class VarManager : MonoBehaviour
         {
             coinsTotal--;
             jumpForceLevel++;
-            playerScript.rotationSpeed = jumpForceBase + jumpForceBase * 0.025f * jumpForceLevel;
+            playerScript.rotationSpeed = jumpForceBase + jumpForceBase * 0.04f * jumpForceLevel;
         }
         UpdateCoinsTotalText();
         UpdateJumpForceLevelText();

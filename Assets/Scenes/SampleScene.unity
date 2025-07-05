@@ -1987,9 +1987,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2045085049}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 170, y: -80}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -230, y: 170}
   m_SizeDelta: {x: 300, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &546226119
@@ -2353,7 +2353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fuelImage: {fileID: 1079067236}
   maxFuelAmount: 100
-  fuelDrainSpeed: 0.2
+  fuelDrainSpeed: 2
   fuelGradient:
     serializedVersion: 2
     key0: {r: 1, g: 0, b: 0, a: 1}
@@ -2741,7 +2741,7 @@ WheelJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Suspension:
     m_DampingRatio: 0.5
-    m_Frequency: 7
+    m_Frequency: 10
     m_Angle: 90
   m_UseMotor: 0
   m_Motor:
@@ -2766,7 +2766,7 @@ WheelJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Suspension:
     m_DampingRatio: 0.5
-    m_Frequency: 7
+    m_Frequency: 10
     m_Angle: 115
   m_UseMotor: 0
   m_Motor:
@@ -3253,9 +3253,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2045085049}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 170, y: -80}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -230, y: 170}
   m_SizeDelta: {x: 300, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1079067236
@@ -3575,7 +3575,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -853, y: -386}
+  m_AnchoredPosition: {x: -853.00006, y: -386.00006}
   m_SizeDelta: {x: -1820, y: -1098}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1121082714
@@ -5367,7 +5367,7 @@ MonoBehaviour:
   speed: 50
   maxSpeed: 5000
   rotationSpeed: 300
-  bikeRB: {fileID: 994736431}
+  bikeObj: {fileID: 994736427}
   frontWheelObj: {fileID: 1105763821}
   rearWheelObj: {fileID: 1357789772}
   fuel: {fileID: 771601176}
